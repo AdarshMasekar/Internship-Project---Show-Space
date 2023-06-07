@@ -249,15 +249,19 @@ h1 {
     padding: 2rem;
     border-radius: 38px;
     cursor: pointer;
-}
+  }
 
-.showImage{
-    width: 240px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 30px;
-    overflow: hidden;
-}
+  .showImage{
+      width: 300px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 30px 30px 0 0;
+      overflow: hidden;
+      position: relative;
+      top:-20px;
+  }
+  
+
 
 .name{
     color: gold;
@@ -280,6 +284,10 @@ h1 {
 
 .left{
     flex: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .right{
     flex: 8;
@@ -287,4 +295,17 @@ h1 {
 
 .right > h3{
     margin-top: 10px;
+}
+
+.bookImage{
+      width: 300px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 30px;
+      overflow: hidden;
+}
+
+.showName{
+  color: gold;
+  margin-top: 20px;
 }
