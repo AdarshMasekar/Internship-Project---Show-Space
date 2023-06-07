@@ -30,7 +30,7 @@ export const Home = () => {
    
   
   return (
-    <div className='app'>
+    <div className='app content-container'>
         <header className='nav'>
             <h1>Show Space</h1>
             <Link to="/register"><h1>Logout</h1></Link>
