@@ -15,6 +15,7 @@ const BookingPage = () => {
 
   return (
       <div className='container side'>
+        <h1>Booking Page</h1>
         <div className="left">
         <div>
             <img className='bookImage' src={Show?.image?.medium || defaultImage} alt={Show.name}/>
