@@ -37,8 +37,8 @@ h1 {
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
-    rgba(249, 211, 180, 1) 0%,
-    rgba(249, 211, 180, 0) 100%
+    rgba(255, 255, 25, 1) 0%,
+    rgba(249, 211, 180, 0.4) 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -243,17 +243,18 @@ h1 {
     align-items: center;
     justify-content: center;
     background-color: #30383f;
-    width:300px;
-    height: 480px;
+    width:19.5rem;
+    height: fit-content;
     margin: 2rem;
     padding: 2rem;
     border-radius: 38px;
     cursor: pointer;
+    box-shadow:0 2px 4px rgba(255, 255, 25);
   }
 
   .showImage{
-      width: 300px;
-      height: 420px;
+      width: 18rem;
+      height: 22rem;
       object-fit: cover;
       border-radius: 30px 30px 0 0;
       overflow: hidden;
@@ -261,17 +262,23 @@ h1 {
       top:-20px;
   }
   
+  .image-container{
+    border-bottom: 1px solid rgba(255, 255, 25) ;
+  }
 
 
 .name{
-    color: gold;
+    color: rgba(249, 211, 180, 1);
     margin-top: 10px;
 }
 
 .book{
-    background-color: antiquewhite;
+    background-color: rgb(238, 220, 120);
     border-radius: 20px;
     margin-bottom: 5px;
+    height:fit-content;
+    padding: 1rem;
+    width: fit-content;
 } 
 
 .side{
@@ -306,6 +313,47 @@ h1 {
 }
 
 .showName{
-  color: gold;
+  color: rgba(249, 211, 180, 1);
   margin-top: 20px;
+}
+
+.register,.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.finput,.fbutton{
+  margin-top: 10px;
+  width: 25rem;
+  height: 2.5rem;
+  padding: 10px;
+  color: rgba(249, 211, 180, 1);
+  background-color: #0f2230;
+}
+
+.booked{
+  color: rgba(249, 211, 180, 1);
+}
+
+.btn1{
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.underlined{
+  underline:red;
+}
+.nav{
+  display: flex;
+  width: 80rem;
+  justify-content: space-between;
 }

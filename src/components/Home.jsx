@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import ShowCard from './ShowCard';
 
 export const Home = () => {
-    const [searchTerm, setSearchTerm] = useState('av');
+    const [searchTerm, setSearchTerm] = useState('kung fu panda   ');
     const [Shows, setShows] = useState([]);
   
     useEffect(() => {
@@ -30,7 +31,10 @@ export const Home = () => {
   
   return (
     <div className='app'>
-        <h1>Show Space</h1>
+        <header className='nav'>
+            <h1>Show Space</h1>
+            <Link to="/register"><h1>Logout</h1></Link>
+        </header>
 
     <div className="search">
       <input
