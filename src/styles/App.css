@@ -353,6 +353,7 @@ h1 {
 
 .showName{
   color: rgba(249, 211, 180, 1);
+  text-align: center;
   margin-top: 20px;
 }
 

@@ -32,7 +32,7 @@ const BookingPage = () => {
             <h3><strong>Type</strong>: {Show.type}</h3>
             <h3><strong>Rating</strong> : {Show.rating.average}</h3>
             <h3><strong>Premiered</strong> : {Show.ended}</h3>
-            <h2><strong>Summary</strong> : {Show.summary? Show.summary:"summary not available"}</h2>
+            <h5><h3><strong>Summary :</strong></h3>  {Show.summary? Show.summary:"summary not available"}</h5>
             <button className='book' onClick={handleBooking} >{isBooked? "Cancel Booking":"Book Now"}</button>
             <h2 className='booked'>{isBooked? Show.name+" is booked":" "}</h2>
         </div>
