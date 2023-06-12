@@ -14,11 +14,11 @@ export const Home = () => {
           .then(data => {
             const showData = data.map(result => result.show);
             setShows(showData);
-            console.log(showData)
+            // console.log(showData)
   
           })
           .catch(error => {
-            console.error('Error:', error);
+            // console.error('Error:', error);
           });
       }
     }, [searchTerm]);
@@ -32,8 +32,8 @@ export const Home = () => {
   return (
     <div className='app content-container'>
         <header className='nav'>
-            <h1>Show Space</h1>
-            <Link to="/register"><h1>Logout</h1></Link>
+            <h3>Show Space</h3>
+            <Link to="/register"><h3>Logout</h3></Link>
         </header>
 
     <div className="search">
@@ -45,7 +45,7 @@ export const Home = () => {
       />
       <svg
         width={40}
-        color='gold'
+        color='white'
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

@@ -14,74 +14,50 @@ const LoginForm = () => {
   };
 
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password");
 
-    // Perform form validation here
-    if (username.length === 0) {
-      alert('Please enter a username');
-      return;
-    }
-
-    if (password.length === 0) {
-      alert('Please enter a password');
-      return;
-    }
-
-    // Retrieve user data from local storage
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-
-      // Check if entered credentials match
-      if (username === user.username && password === user.password) {
-        // Set a flag or token to indicate logged-in state
-        localStorage.setItem('isLoggedIn', 'true');
-        alert('Login successful');
-
-        // Redirect to home page
-        navigate("/home");
-      } else {
-        console.log('Invalid credentials');
-      }
+    // Check if the stored username and password match the input values
+    if (storedUsername === username && storedPassword === password) {
+      alert("Login successful");
+      navigate("/home");
     } else {
-      console.log('User not found');
+      alert("Invalid username or password");
     }
-
-    // Clear form inputs
-    setUsername('');
-    setPassword('');
   };
-
-  const handleLogin= () =>{
-    navigate("/home");
+  const handleSignUp= () =>{
+    navigate("/#");
   }
 
   return (
    <div className="container login">
     <h1>Login</h1>
         <form className='form' onSubmit={handleSubmit}>
-        <div>
+      
+        <label htmlFor="username">Username</label>
             <input className='finput'
             type="text"
             id="username"
-            placeholder='username'
+            name='username'
+            placeholder='Enter your username'
             value={username}
             onChange={handleUsernameChange}
             />
-        </div>
-        <div>
+        
+          <label htmlFor="password">Password</label>
             <input className='finput'
             type="password"
             id="password"
-            placeholder='password'
+            name='password'
+            placeholder='Enter your password'
             value={password}
             onChange={handlePasswordChange}
             />
-        </div>
+        
         <button className='fbutton' type="submit">Login</button>
 
-        <h5 className="text mt-4 text-center">Don't have an account? <button className=" btn1" onClick={handleLogin}>Register</button></h5>
+        <h5 className="text mt-4 text-center">Don't have an account? <button className=" btn1" onClick={handleSignUp}>Sign Up</button></h5>
   
         </form>
    </div>

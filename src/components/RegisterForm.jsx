@@ -16,17 +16,9 @@ const RegisterForm = () => {
       return;
     }
 
-    // Register the user
-    const data = {
-      username,
-      email,
-      password,
-    };
-
-    fetch("/api/register", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    // Store the username and password details in local storage
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
 
     // Redirect to the login form
     alert("Registration succussfull")
@@ -42,26 +34,32 @@ const RegisterForm = () => {
 
   return (
     <div className="container register">
-      <h1>Register</h1>
+      <h1>Create your account</h1>
       <form onSubmit={handleSubmit} className="form">
+      <label htmlFor="username">Name</label>
         <input className="finput"
           type="text"
-          placeholder="Username"
+          name = "username"
+          placeholder="Enter your username"
           onChange={(e) => setUsername(e.target.value)}
         />
+         <label htmlFor="email">Email</label>
         <input className="finput"
           type="email"
-          placeholder="Email"
+          name="email"
+          placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
         />
+         <label htmlFor="password">Password</label>
         <input className="finput"
           type="password"
-          placeholder="Password"
+          name = "password"
+          placeholder="Enter your password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="fbutton" type="submit">Register</button>
+        <button className="fbutton" type="submit">Sign Up</button>
+       <h5 className="text-center mt-4">Already have an account? <button className=" btn1" onClick={handleLogin}>Log In</button></h5>
       </form>
-       <h5 className="text mt-4">Already have an account? <button className=" btn1" onClick={handleLogin}>Login.</button></h5>
     </div>
   );
 };

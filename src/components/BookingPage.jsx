@@ -1,6 +1,7 @@
 import React from 'react';
 import {useLocation} from 'react-router-dom';
 import {useState} from 'react';
+import "../styles/App.css"
 
 const BookingPage = () => { 
     const location = useLocation();
@@ -14,14 +15,15 @@ const BookingPage = () => {
     }
 
   return (
-      <div className='container side'>
-        <h1>Booking Page</h1>
-        <div className="left">
-        <div>
-            <img className='bookImage' src={Show?.image?.medium || defaultImage} alt={Show.name}/>
-        </div>
-            
-        <h4 className="showName">{Show.name}</h4>
+    <div className='container'>
+        <h1 className='underline'>Show Details</h1>
+       <div className="side">
+       <div className="left">
+          <div>
+              <img className='bookImage' src={Show?.image?.medium || defaultImage} alt={Show.name}/>
+          </div>
+              
+          <h4 className="showName">{Show.name}</h4>
         </div>
 
         <div className="right">
@@ -34,6 +36,7 @@ const BookingPage = () => {
             <button className='book' onClick={handleBooking} >{isBooked? "Cancel Booking":"Book Now"}</button>
             <h2 className='booked'>{isBooked? Show.name+" is booked":" "}</h2>
         </div>
+       </div>
     </div>
   );
 }
